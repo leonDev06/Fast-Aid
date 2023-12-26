@@ -21,6 +21,7 @@ public class MyApp extends Application {
         super.onCreate();
 
         // Load injuries from JSON file. If JSON file not found, load from HARDCODED instead.
+        // Is alive for the whole app lifecycle. Shouldn't hog too much memory as it's relatively few.
         try{
             injuries = loadInjuriesFromFile();
         }catch (IOException e){

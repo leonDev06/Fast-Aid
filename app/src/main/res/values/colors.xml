@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--Change this value to change BG color of whole app-->
+    <color name="app_bg_color">#191970</color>
+
 </resources>

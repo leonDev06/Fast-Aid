@@ -19,16 +19,21 @@ public class InjuryDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_injury_detail);
 
-        mInjuryName = findViewById(R.id.mInjuryNameDetail);
-        mInjuryDescription = findViewById(R.id.injuryDescription);
-        mInjuryFirstAid = findViewById(R.id.injuryFirstAid);
-
-        String injuryName = getIntent().getStringExtra("NAME");
-        this.injury = ((MyApp) getApplication()).getInjuries().get(injuryName);
-
+        bindViews();
+        getInjuryDetail();
         setupUiDisplay();
     }
 
+    private void getInjuryDetail() {
+        String injuryName = getIntent().getStringExtra("NAME");
+        this.injury = ((MyApp) getApplication()).getInjuries().get(injuryName);
+    }
+
+    private void bindViews(){
+        mInjuryName = findViewById(R.id.mInjuryNameDetail);
+        mInjuryDescription = findViewById(R.id.injuryDescription);
+        mInjuryFirstAid = findViewById(R.id.injuryFirstAid);
+    }
     private void setupUiDisplay(){
         mInjuryName.setText(injury.name);
         mInjuryDescription.setText(injury.description);

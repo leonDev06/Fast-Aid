@@ -37,10 +37,10 @@ android {
 
 dependencies {
     // Added Dependencies
-    // DAGGER
+    // DAGGER (DI) -> In case this app get bigger
     implementation 'com.google.dagger:dagger:2.49'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.49'
-    //GSON
+    //GSON (JSON Parser)
     implementation 'com.google.code.gson:gson:2.8.9'
 
     // Default

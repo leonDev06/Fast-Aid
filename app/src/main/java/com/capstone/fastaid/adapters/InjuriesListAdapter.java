@@ -19,7 +19,7 @@ public class InjuriesListAdapter extends RecyclerView.Adapter<InjuriesListAdapte
     // Properties
     private final String[] injuriesList;
 
-    // Context
+    // Context. Not a mem leak. Only accessed inside this class' private class
     @SuppressLint("StaticFieldLeak")
     private static Context context;
 
