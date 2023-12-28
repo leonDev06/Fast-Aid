@@ -17,7 +17,7 @@ import com.capstone.fastaid.activities.InjuryDetail;
 
 public class InjuriesListAdapter extends RecyclerView.Adapter<InjuriesListAdapter.MyViewHolder> {
     // Properties
-    private final String[] injuriesList;
+    private String[] injuriesList;
 
     // Context. Not a mem leak. Only accessed inside this class' private class
     @SuppressLint("StaticFieldLeak")
@@ -45,6 +45,10 @@ public class InjuriesListAdapter extends RecyclerView.Adapter<InjuriesListAdapte
     @Override
     public int getItemCount() {
         return injuriesList.length;
+    }
+
+    public void setInjuriesList(String[] injuries){
+        this.injuriesList = injuries;
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

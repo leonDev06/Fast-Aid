@@ -45,6 +45,13 @@ public class InjuryDetail extends AppCompatActivity {
         setupVideo();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mThumbnail.setVisibility(View.VISIBLE);
+
+    }
+
     private void getInjuryDetail() {
         String injuryName = getIntent().getStringExtra("NAME");
         this.injury = ((MyApp) getApplication()).getInjuries().get(injuryName);
