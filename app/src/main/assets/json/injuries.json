@@ -2,21 +2,19 @@
   {
     "name": "Cut/Scrape",
     "description": "Sharp object like a knife or glass, or even a sheet of paper",
-    "firstAid": "If there is bleeding, press firmly over the site with a clean cloth until it stops, anywhere from three to 15 minutes."
+    "firstAid": "If there is bleeding, press firmly over the site with a clean cloth until it stops, anywhere from three to 15 minutes.",
+    "videoName": "sample_vid"
   },
   {
     "name": "Burn",
     "description": "Heat or due to radiation, radioactivity, electricity, friction or contact with chemicals",
-    "firstAid": "Immediately hold injury under cold running water or apply a cold, wet towel until the pain subsides. Cover any small blisters with a loose bandage or gauze and tape. Call a doctor as soon as possible if burns are on the face, hands, or genitals, or if they’re larger than 1/4 inch anywhere on the body."
+    "firstAid": "Immediately hold injury under cold running water or apply a cold, wet towel until the pain subsides. Cover any small blisters with a loose bandage or gauze and tape. Call a doctor as soon as possible if burns are on the face, hands, or genitals, or if they’re larger than 1/4 inch anywhere on the body.",
+    "videoName": "sample_vid"
   },
   {
     "name": "Nosebleed",
     "description": "Infection, injury, allergic reaction, nose picking or an object being pushed into the nostril",
-    "firstAid": "Sit upright and don’t tilt your head back. Loosen any tight clothing around your neck. Pinch the lower end of the nose close to the nostrils and lean forward while you apply constant pressure for five to ten minutes. "
-  },
-  {
-    "name": "czxczxc",
-    "description": "zxczxc",
-    "firstAid": "zxczxczxc."
+    "firstAid": "Sit upright and don’t tilt your head back. Loosen any tight clothing around your neck. Pinch the lower end of the nose close to the nostrils and lean forward while you apply constant pressure for five to ten minutes.Sit upright and don’t tilt your head back. Loosen any tight clothing around your neck. Pinch the lower end of the nose close to the nostrils and lean forward while you apply constant pressure for five to ten minutes.Sit upright and don’t tilt your head back. Loosen any tight clothing around your neck. Pinch the lower end of the nose close to the nostrils and lean forward while you apply constant pressure for five to ten minutes.Sit upright and don’t tilt your head back. Loosen any tight clothing around your neck. Pinch the lower end of the nose close to the nostrils and lean forward while you apply constant pressure for five to ten minutes.Sit upright and don’t tilt your head back. Loosen any tight clothing around your neck. Pinch the lower end of the nose close to the nostrils and lean forward while you apply constant pressure for five to ten minutes.Sit upright and don’t tilt your head back. Loosen any tight clothing around your neck. Pinch the lower end of the nose close to the nostrils and lean forward while you apply constant pressure for five to ten minutes.",
+    "videoName": "sample_vid"
   }
 ]
