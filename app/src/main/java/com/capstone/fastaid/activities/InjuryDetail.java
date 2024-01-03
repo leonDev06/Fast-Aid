@@ -52,11 +52,6 @@ public class InjuryDetail extends AppCompatActivity {
 
     }
 
-    private void getInjuryDetail() {
-        String injuryName = getIntent().getStringExtra("NAME");
-        this.injury = ((MyApp) getApplication()).getInjuries().get(injuryName);
-    }
-
     private void bindViews(){
         // TextViews
         mInjuryName = findViewById(R.id.mInjuryNameDetail);
@@ -71,6 +66,12 @@ public class InjuryDetail extends AppCompatActivity {
         // Frame
         mFrame = findViewById(R.id.frameLayout);
     }
+
+    private void getInjuryDetail() {
+        String injuryName = getIntent().getStringExtra("NAME");
+        this.injury = ((MyApp) getApplication()).getInjuries().get(injuryName);
+    }
+
     private void setupUiDisplay(){
         mInjuryName.setText(injury.name);
         mInjuryDescription.setText(injury.description);

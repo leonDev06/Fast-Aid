@@ -5,8 +5,6 @@ import android.app.Application;
 import com.capstone.fastaid.models.Injury;
 import com.google.gson.Gson;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -20,13 +18,9 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Load injuries from JSON file. If JSON file not found, load from HARDCODED instead.
+        // Load injuries from JSON file.
         // Is alive for the whole app lifecycle. Shouldn't hog too much memory as it's relatively few.
-        try{
-            injuries = loadInjuriesFromFile();
-        }catch (IOException e){
-            injuries = loadHardcodedInjuries();
-        }
+        injuries = loadHardcodedInjuries();
     }
 
     // GETTERS
@@ -50,27 +44,14 @@ public class MyApp extends Application {
             throw new RuntimeException(e);
         }
 
-        return parseToHashMap(buffer);
+        String json = new String(buffer, StandardCharsets.UTF_8);
+        return parseToHashMap(json);
     }
 
-    private HashMap<String, Injury> loadInjuriesFromFile() throws IOException {
-        // Loads injuries from JSON file accessible to public in Android Files of this app
-        File injuriesFile = new File(getExternalFilesDir(null), "injuries.json");
-        FileInputStream fileInputStream = new FileInputStream(injuriesFile);
-
-        // Read the contents of the injuriesFile
-        byte[] buffer = new byte[(int)injuriesFile.length()];
-        fileInputStream.read(buffer);
-        fileInputStream.close();
-
-        return parseToHashMap(buffer);
-    }
-
-    private HashMap<String, Injury> parseToHashMap(byte[] buffer){
+    private HashMap<String, Injury> parseToHashMap(String json){
         // Helper. Converts Array to Hashmap<String, Injury>
         HashMap<String, Injury> map = new HashMap<>();
 
-        String json = new String(buffer, StandardCharsets.UTF_8);
         Injury[] arr = new Gson().fromJson(json, Injury[].class);
 
         for (Injury injury : arr){

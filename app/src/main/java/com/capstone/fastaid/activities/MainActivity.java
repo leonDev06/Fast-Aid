@@ -63,6 +63,12 @@ public class MainActivity extends AppCompatActivity {
         mSearchBar = findViewById(R.id.searchBar);
     }
 
+    private void loadAllInjuries(){
+        HashMap<String, Injury> loadedInjuries = ((MyApp) getApplication()).getInjuries();
+        injuries = Arrays.stream(loadedInjuries.keySet().toArray())
+                .toArray(String[]::new);
+    }
+
     private void setupInjuriesList(){
         // Get loaded injuries' names
         loadAllInjuries();
@@ -83,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
         String keyword = mSearchBar.getText().toString().toLowerCase();
         hideKeyboard();
 
+        // Make sure that the list that we're searching at contains all injuries.
+        // Not filtered data from previous searches
         loadAllInjuries();
 
         // Search for all relevant results
@@ -97,12 +105,6 @@ public class MainActivity extends AppCompatActivity {
         injuries = Arrays.stream(relevantInjuries.toArray()).toArray(String[]::new);
         adapter.setInjuriesList(injuries);
         injuriesList.setAdapter(adapter);
-    }
-
-    private void loadAllInjuries(){
-        HashMap<String, Injury> loadedInjuries = ((MyApp) getApplication()).getInjuries();
-        injuries = Arrays.stream(loadedInjuries.keySet().toArray())
-                .toArray(String[]::new);
     }
 
     private void observeSearchBar(){
